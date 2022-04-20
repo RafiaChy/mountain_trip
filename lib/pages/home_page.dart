@@ -11,7 +11,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
-
+ var images =  {
+   'ballooning' : 'ballooning.jpg',
+    'hiking' : 'hiking.jpg',
+    'kayaking' : 'kayaking.jpg',
+    'snorkeling' : 'snorkeling.jpg',
+ };
   @override
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 3, vsync: this);
@@ -113,25 +118,31 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
               itemCount: 4,
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index){
-              return Column(
-                children: [
-                  Container(
-                    margin: const EdgeInsets.only(right: 50),
-                    width: 80,
-                    height: 80,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
-                      color: Colors.white,
-                      image: const DecorationImage(
-                        image: AssetImage('images/intro1.jpg'),
-                        fit: BoxFit.cover,
-                      ),
-
-                    ),),
-                  Container(
-                    child: SubText(text: 'Kayaking', color: Colors.black,)
-                  ),
-                ],
+              return Container(
+                margin: const EdgeInsets.only(right: 30),
+                child: Column(
+                 
+                  children: [
+                    Expanded(
+                      child: Container(
+                     //   margin: const EdgeInsets.only(right: 50),
+                        width: 80,
+                        height: 80,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.white,
+                          image:  DecorationImage(
+                            image: AssetImage('images/' + images.keys.elementAt(index)),
+                            fit: BoxFit.cover,
+                          ),
+                    
+                        ),),
+                    ),
+                   
+                   Container(child: SubText(text: images.values.elementAt(index), color: Colors.black,))
+                    
+                  ],
+                ),
               );
             },),
           ),
