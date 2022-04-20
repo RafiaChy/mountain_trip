@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mountain_trips/pages/navPages/bar_item.dart';
-import 'package:mountain_trips/pages/navPages/home_page.dart';
+import 'package:mountain_trips/pages/home_page.dart';
 import 'package:mountain_trips/pages/navPages/my_page.dart';
 import 'package:mountain_trips/pages/navPages/search_page.dart';
 class MainPage extends StatefulWidget {

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mountain_trips/pages/navPages/home_page.dart';
+import 'package:mountain_trips/pages/detail_page.dart';
+import 'package:mountain_trips/pages/home_page.dart';
 import 'package:mountain_trips/pages/navPages/main_page.dart';
 import 'package:mountain_trips/pages/welcome_page.dart';
 
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainPage(),
+     // home: MainPage(),
+     home: DetailPage(),
     );
   }
 }

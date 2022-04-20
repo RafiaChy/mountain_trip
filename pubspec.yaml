@@ -64,6 +64,11 @@ flutter:
     - images/welcome3.jpg
     - images/arrows.png
     - images/intro1.jpg
+    - images/travelling.jpg
+    - images/snorkeling.jpg
+    - images/kayaking.jpg
+    - images/hiking.jpg
+    - images/ballooning.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
