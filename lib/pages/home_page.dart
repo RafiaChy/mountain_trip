@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mountain_trips/texts/header_text.dart';
+import 'package:mountain_trips/texts/large_text.dart';
 import 'package:mountain_trips/texts/sub_text.dart';
 
 class HomePage extends StatefulWidget {
