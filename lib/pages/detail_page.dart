@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountain_trips/buttons/reusable_button.dart';
 import 'package:mountain_trips/texts/large_text.dart';
 import 'package:mountain_trips/texts/sub_text.dart';
 
@@ -90,14 +91,7 @@ class _DetailPageState extends State<DetailPage> {
                     const SizedBox(height: 5,),
                     Wrap(
                       children: List.generate(5, (index) =>
-                       Container(
-                         width: 60,
-                         height: 60,
-                         decoration: BoxDecoration(
-                           color: Colors.white70,
-                           borderRadius: BorderRadius.circular(15),
-                         ),
-                       )
+                      ReusableButton(size: 60, color: Colors.black, backgroundcolor: Colors.grey.shade200, borderColor: Colors.grey.shade200, isIcon: false, text: '${index+1}' ,)
                        ),
                     )
                   ],
