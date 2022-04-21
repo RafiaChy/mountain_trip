@@ -85,10 +85,25 @@ class _DetailPageState extends State<DetailPage> {
                       height: 20,
                     ),
                     LargeText(text: 'People', color: Colors.black.withOpacity(0.8), size: 20,),
+                    const SizedBox(height: 5,),
+                    SubText(text: 'Number of people in your group', color: Colors.black54,),
+                    const SizedBox(height: 5,),
+                    Wrap(
+                      children: List.generate(5, (index) =>
+                       Container(
+                         width: 60,
+                         height: 60,
+                         decoration: BoxDecoration(
+                           color: Colors.white70,
+                           borderRadius: BorderRadius.circular(15),
+                         ),
+                       )
+                       ),
+                    )
                   ],
                 ),
               ),
-              )
+              ),
           ],
         ),
       ),
