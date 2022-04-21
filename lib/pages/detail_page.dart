@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mountain_trips/texts/large_text.dart';
+import 'package:mountain_trips/texts/sub_text.dart';
 
 class DetailPage extends StatefulWidget {
   const DetailPage({ Key? key }) : super(key: key);
@@ -52,14 +53,38 @@ class _DetailPageState extends State<DetailPage> {
                   )
                 ),
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
+                      children: const[
                         LargeText(text: 'Yosemite', color: Colors.black54,),
                         LargeText(text: '\$1000', color: Colors.black45,),
                       ],
-                    )
+                    ),
+                    const SizedBox(height: 10,),
+
+                    Row(
+                      children: [
+                        const Icon(Icons.location_on, color: Colors.black45,),
+                        const SizedBox(width: 5,),
+                        SubText(text: 'USA, California', color: Colors.black45,),
+                      ],
+                    ),
+                    const SizedBox(height: 20,),
+                    Row(
+                      children: [
+                        Wrap(
+                      children: List.generate(5, (index) => const Icon(Icons.star, color: Colors.amber,)),
+                    ),
+                    const SizedBox(width: 5,),
+                    SubText(text: '(4.0)', color: Colors.black45,)
+                      ],
+                    ),
+                   const SizedBox(
+                      height: 20,
+                    ),
+                    LargeText(text: 'People', color: Colors.black.withOpacity(0.8), size: 20,),
                   ],
                 ),
               ),
