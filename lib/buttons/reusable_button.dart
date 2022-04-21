@@ -25,8 +25,8 @@ class ReusableButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      child: isIcon == false? Center(child: SubText(text: text!, color: Colors.black,)) : Icon(icon),
-        margin: const EdgeInsets.only(right: 3),
+      child: isIcon == false? Center(child: SubText(text: text!, color: color,)) : Icon(icon),
+        margin: const EdgeInsets.only(right: 6),
         width: size,
         height: size,
         decoration: BoxDecoration(

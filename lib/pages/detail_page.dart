@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountain_trips/buttons/responsive_button.dart';
 import 'package:mountain_trips/buttons/reusable_button.dart';
 import 'package:mountain_trips/texts/large_text.dart';
 import 'package:mountain_trips/texts/sub_text.dart';
@@ -11,6 +12,8 @@ class DetailPage extends StatefulWidget {
 }
 
 class _DetailPageState extends State<DetailPage> {
+  int gottenStars = 4;
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -91,13 +94,34 @@ class _DetailPageState extends State<DetailPage> {
                     const SizedBox(height: 5,),
                     Wrap(
                       children: List.generate(5, (index) =>
-                      ReusableButton(size: 60, color: Colors.black, backgroundcolor: Colors.grey.shade200, borderColor: Colors.grey.shade200, isIcon: false, text: '${index+1}' ,)
+                      InkWell(
+                        onTap: (){
+                          setState(() {
+                            selectedIndex = index;
+                          });
+                        } ,
+                        child: ReusableButton(size: 60, color: selectedIndex == index ? Colors.white: Colors.black, backgroundcolor: selectedIndex == index ? Colors.black : Colors.grey.shade200, borderColor: selectedIndex == index ? Colors.black : Colors.grey.shade200, isIcon: false, text: '${index+1}' ,))
                        ),
-                    )
+                    ),
+                    const SizedBox(height: 20,),
+                    const LargeText(text: 'Description', color: Colors.black38,),
+                    SubText(text: 'Lorem Ipsum blah blah blah you just want what you can\'t have what you can\'t have tata bye bye', color: Colors.black45,)
+
                   ],
                 ),
               ),
               ),
+              Positioned(
+                bottom: 30,
+                left: 30,
+                right: 20,
+                child: Row(
+                  children: [
+                    ReusableButton(size: 60, color: Colors.blue.shade400, backgroundcolor: Colors.white, borderColor: Colors.blueGrey, isIcon: true, icon: Icons.favorite_border, ),
+                    const SizedBox(width: 10,),
+                    ResponsiveButton(isResponsive: true,),
+                  ],
+                ))
           ],
         ),
       ),
