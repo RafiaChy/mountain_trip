@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mountain_trips/cubit/app_cubit.dart';
+import 'package:mountain_trips/cubit/app_logics.dart';
 import 'package:mountain_trips/pages/detail_page.dart';
 import 'package:mountain_trips/pages/home_page.dart';
 import 'package:mountain_trips/pages/navPages/main_page.dart';
@@ -18,7 +21,10 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
      // home: MainPage(),
-     home: DetailPage(),
+     home: BlocProvider<AppCubit>(
+       create: (context) => AppCubit(),
+       child: AppLogics(),
+       )
     );
   }
 }
