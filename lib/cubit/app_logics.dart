@@ -20,6 +20,9 @@ class _AppLogicsState extends State<AppLogics> {
           if(state is WelcomeState){
             return WelcomePage();
           }
+          if(state is LoadingState){
+            return Center(child: CircularProgressIndicator(),);
+          }
           return Container();
         }),
     );

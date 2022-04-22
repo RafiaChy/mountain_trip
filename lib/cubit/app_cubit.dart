@@ -7,4 +7,11 @@ class AppCubit extends Cubit<AppState> {
   AppCubit() : super(InitialState()){
     emit(WelcomeState());
   }
+
+  void getData(){
+    try{
+      emit(LoadingState());
+    }
+    catch(e){}
+  }
 }

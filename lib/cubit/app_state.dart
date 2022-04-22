@@ -18,3 +18,14 @@ class WelcomeState extends AppState {
   List<Object> get props => [];
 }
 
+class LoadingState extends AppState {
+  
+  @override
+  List<Object> get props => [];
+}
+class LoadedState extends AppState {
+  
+  @override
+  List<Object> get props => [];
+}
+

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mountain_trips/buttons/responsive_button.dart';
+import 'package:mountain_trips/cubit/app_cubit.dart';
 import 'package:mountain_trips/texts/large_text.dart';
 import 'package:mountain_trips/texts/sub_text.dart';
 
@@ -57,7 +59,14 @@ class _WelcomePageState extends State<WelcomePage> {
                   Container(padding: const EdgeInsets.all(8.0), width: MediaQuery.of(context).size.width*0.5, color:Colors.white,child: LargeText(text: '${largeText[index]}' ),),
                   Container(padding: const EdgeInsets.all(8.0), width: MediaQuery.of(context).size.width*0.5, color:Colors.white, child: SubText(text: '${smallText[index]}' ),),
                   SizedBox(height: 40,),
-                  ResponsiveButton(b_width: 120)
+                  GestureDetector(
+                    onTap: (){
+                      BlocProvider.of<AppCubit>(context).getData();
+                    },
+                    child: Container(
+                      width: 200,
+                      child: ResponsiveButton(b_width: 120)),
+                  )
 
                 ],
               ),
