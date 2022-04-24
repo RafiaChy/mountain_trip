@@ -24,8 +24,9 @@ class LoadingState extends AppState {
   List<Object> get props => [];
 }
 class LoadedState extends AppState {
-  
+  LoadedState({required this.places});
+  final List<DataModel> places;
   @override
-  List<Object> get props => [];
+  List<Object> get props => [places];
 }
 

@@ -6,6 +6,7 @@ import 'package:mountain_trips/pages/detail_page.dart';
 import 'package:mountain_trips/pages/home_page.dart';
 import 'package:mountain_trips/pages/navPages/main_page.dart';
 import 'package:mountain_trips/pages/welcome_page.dart';
+import 'package:mountain_trips/services/data_services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
      // home: MainPage(),
      home: BlocProvider<AppCubit>(
-       create: (context) => AppCubit(),
+       create: (context) => AppCubit(DataServices()),
        child: AppLogics(),
        )
     );
