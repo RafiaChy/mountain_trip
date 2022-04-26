@@ -28,7 +28,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
         builder: (context, state) {
           if(state is LoadedState){
             var info = state.places;
-            print('####${info.first.img}');
           return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -140,14 +139,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                                 borderRadius: BorderRadius.circular(20),
                                 color: Colors.white,
                                 image:  DecorationImage(
-                                  image: AssetImage('images/' + images.keys.elementAt(index)),
+                                  image: AssetImage('images/' + images.values.elementAt(index)),
                                   fit: BoxFit.cover,
                                 ),
                           
                               ),),
                           ),
                          
-                         Container(child: SubText(text: images.values.elementAt(index), color: Colors.black,))
+                         Container(margin: const EdgeInsets.only(top: 10), child: SubText(text: images.keys.elementAt(index), color: Colors.black,))
                           
                         ],
                       ),
