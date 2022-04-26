@@ -21,12 +21,13 @@ class _AppLogicsState extends State<AppLogics> {
           if(state is WelcomeState){
             return WelcomePage();
           }
+          if(state is LoadedState){
+            return HomePage();
+          }
           if(state is LoadingState){
             return Center(child: CircularProgressIndicator(),);
           }
-           if(state is LoadedState){
-            return HomePage();
-          }
+           
           return Container();
         }),
     );

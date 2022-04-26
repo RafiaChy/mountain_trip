@@ -21,12 +21,14 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
  };
   @override
   Widget build(BuildContext context) {
+  
     TabController tabController = TabController(length: 3, vsync: this);
     return Scaffold(
       body: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           if(state is LoadedState){
             var info = state.places;
+            print('####${info.first.img}');
           return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -92,7 +94,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin{
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white,
                         image: DecorationImage(
-                        image: NetworkImage('http://mark/bslmeivu.com/uploads/' + info[index].img),
+                        image: NetworkImage('http://mark.bslmeiyu.com/uploads/' + info[index].img),
                         fit: BoxFit.cover,
                         ),
       
