@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:mountain_trips/models/data_model.dart';
@@ -23,5 +25,11 @@ class AppCubit extends Cubit<AppState> {
       emit(LoadedState( places: places));
     }
     catch(e){}
+  }
+  detailPage (DataModel data){
+    emit(DetailState( place: data));
+  }
+  goHome(){
+    emit(LoadedState(places: places));
   }
 }
