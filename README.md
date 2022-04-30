@@ -5,5 +5,6 @@ A new Flutter project.
 ## Cubit
 ## http get request, json
 ## carousel with PageView.Biulder()
-## List
+## List   
+## stack and changing container shapes dynamically
 
